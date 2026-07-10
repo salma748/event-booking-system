@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: event-booking-postgres
+    environment:
+      POSTGRES_DB: event-booking_db
+      POSTGRES_USER: event_booking_user
+      POSTGRES_PASSWORD: event_booking_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - event_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  event_postgres_data:
